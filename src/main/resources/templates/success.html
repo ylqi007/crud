@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>成功</h1>
+
+<hr>
+<!-- th:text 将 div 内的文本内容替换 ${hello} -->
+<div th:text="${hello}">静态 div 信息</div>
+
+<hr>
+<div th:each="user : ${users}" th:text="${user}"></div>
+
+<hr>
+<div>
+    <span th:each="user : ${users}" th:text="${user}"></span>
+</div>
+</body>
+</html>
