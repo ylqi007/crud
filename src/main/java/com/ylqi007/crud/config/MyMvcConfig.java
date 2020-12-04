@@ -19,8 +19,6 @@ public class MyMvcConfig implements WebMvcConfigurer {
         registry.addViewController("/").setViewName("login");   // templates/index.html
         registry.addViewController("/index.html").setViewName("login");
         registry.addViewController("/main.html").setViewName("dashboard");
-
-
     }
 
     @Bean
@@ -33,6 +31,6 @@ public class MyMvcConfig implements WebMvcConfigurer {
         // 静态资源: *.css, *.js
         // Spring Boot 已经做好了静态资源的映射
         registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-                .excludePathPatterns("/index.html", "/", "/user/login");
+                .excludePathPatterns("/index.html", "/", "/user/login", "/hello", "/webjars/**", "/asserts/**");
     }
 }
