@@ -2,6 +2,7 @@ package com.ylqi007.crud.config;
 
 import com.ylqi007.crud.component.LoginHandlerInterceptor;
 import com.ylqi007.crud.component.MyLocaleResolver;
+import org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
@@ -30,7 +31,9 @@ public class MyMvcConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         // 静态资源: *.css, *.js
         // Spring Boot 已经做好了静态资源的映射
-        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
-                .excludePathPatterns("/index.html", "/", "/user/login", "/hello", "/webjars/**", "/asserts/**");
+//        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
+//                .excludePathPatterns("/index.html", "/", "/user/login", "/hello", "/webjars/**", "/asserts/**");
     }
+
+
 }

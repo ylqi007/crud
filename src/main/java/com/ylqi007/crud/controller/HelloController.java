@@ -1,7 +1,9 @@
 package com.ylqi007.crud.controller;
 
+import com.ylqi007.crud.exception.UserNotExistException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Arrays;
@@ -14,9 +16,12 @@ public class HelloController {
      * Directly return the content to the browser.
      * @return
      */
-    @ResponseBody
+    @ResponseBody   // Directly return the content to the browser
     @RequestMapping("/hello")
-    public String hello() {
+    public String hello(@RequestParam("user") String user) {
+        if(user.equals("aaa")) {
+            throw new UserNotExistException();
+        }
         return "Hello, Yinping Liu.";
     }
 
@@ -32,10 +37,10 @@ public class HelloController {
         return "success";
     }
 
-    /**
-     *
-     * @return
-     */
+//    /**
+//     *
+//     * @return
+//     */
 //    @RequestMapping({"/", "/index.html"})
 //    public String index() {
 //        return "index";     // default return value will be used by thymeleaf, i.e. templates/index.html
