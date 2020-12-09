@@ -3,6 +3,9 @@ package com.ylqi007.crud.config;
 import com.ylqi007.crud.component.LoginHandlerInterceptor;
 import com.ylqi007.crud.component.MyLocaleResolver;
 import org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration;
+import org.springframework.boot.web.server.ConfigurableWebServerFactory;
+import org.springframework.boot.web.server.WebServerFactory;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
@@ -34,6 +37,5 @@ public class MyMvcConfig implements WebMvcConfigurer {
 //        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**")
 //                .excludePathPatterns("/index.html", "/", "/user/login", "/hello", "/webjars/**", "/asserts/**");
     }
-
 
 }
